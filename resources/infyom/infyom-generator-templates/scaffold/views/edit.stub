@@ -1,0 +1,48 @@
+@extends('layouts.app')
+
+@section('htmlheader_title')$MODEL_NAME$
+@endsection
+
+@section('content')
+    @pageHeader('$MODEL_NAME$.', 'Edición.', 'fa fa-angle-double-right')
+    {!! Breadcrumbs::render('$MODEL_NAME_PLURAL_CAMEL$Edit') !!}
+
+    <div class="portlet box blue-hoki">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-thumb-tack"></i>Edición de $MODEL_NAME$
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a>
+                <a href="" class="fullscreen"> </a>
+            </div>
+        </div>
+
+        <div class="portlet-body form">
+            <div>@include('metronic-templates::common.errors')</div>
+            {!! Form::model($$MODEL_NAME_CAMEL$, ['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.update', $$MODEL_NAME_CAMEL$->id,
+                                'class' => 'horizontal-form'], 'method' => 'patch']) !!}
+                <div class="form-body">
+                    @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.fields')
+                </div>
+                <div class="clearfix"></div>
+                @pageFormActions('new-edit','$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index')
+
+            {!! Form::close() !!}
+        </div>
+    </div>
+@endsection
+
+@section('scripts')
+    @parent
+    <script language="JavaScript">
+        $(document).ready(function() {
+            $('#com_cliente_id').select2({
+                language: "es", allowClear: true, placeholder: "Seleccione Compañía"
+            });
+            $('#com_org_id').select2({
+                language: "es", allowClear: true, placeholder: "Seleccione Condominio"
+            });
+        });
+    </script>
+@endsection

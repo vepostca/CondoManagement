@@ -1,0 +1,3 @@
+# InfyOm Laravel Generator with Metronic Templates Boilerplate
+
+### Docs are on the way...

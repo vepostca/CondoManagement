@@ -1,0 +1,76 @@
+<div class="portlet box blue-oleo" style="margin-bottom: 0px">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-thumb-tack"></i>Parámetros de Correo Electrónico
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"> </a>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <div class="form-body" style="margin-bottom: 0px; padding-bottom: 0px">
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    {!! Form::label('servidor_smtp', 'Servidor SMTP:', ['class' => 'control-label']) !!}
+                    {!! Form::text('servidor_smtp', null, ['class' => 'form-control',
+                                                          'placeholder' => 'Nombre o IP del Servidor SMTP',
+                                                          'maxlength'   => '50',
+                                                          'title'       =>'Nombre o IP del Servidor SMTP'
+                                                          ]) !!}
+                </div>
+                <div class="form-group col-sm-6 required">
+                    {!! Form::label('puerto_smtp', 'Puerto SMTP:', ['class' => 'control-label']) !!}
+                    {!! Form::text('puerto_smtp', null, ['class' => 'form-control',
+                                                          'placeholder' => 'Nro. de Puerto.',
+                                                          'maxlength'   => '10',
+                                                          'title'       =>'Puerto de conexión SMTP'
+                                                          ]) !!}
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-2 required">
+                    {!! Form::label('autorizacion_smtp', 'Autorización SMTP:',['class' => 'control-label']) !!}
+                    <label class="checkbox-inline" style="padding-left:0px">
+                    {!! Form::hidden('autorizacion_smtp',false) !!}
+                    {!! Form::checkbox('autorizacion_smtp', '1', true, ['data-toggle' => 'toggle',
+                                                             'data-on' => 'Si', 'data-onstyle' => 'primary',
+                                                             'data-off' => 'No', 'data-offstyle' => 'danger',
+                                                             'data-size' => 'normal',
+                                                             'data-height' => '28',
+                                                             'data-width' => '50']) !!}
+                    </label>
+                </div>
+                <div class="form-group col-sm-4">
+                    {!! Form::label('cuenta_smtp', 'Cuenta de Usuario SMTP:', ['class' => 'control-label']) !!}
+                    {!! Form::text('cuenta_smtp', null, ['class' => 'form-control',
+                                                          'placeholder' => 'Nombre de Usuario SMTP',
+                                                          'maxlength'   => '50',
+                                                          'title'       =>'Cuenta de Usuario SMTP'
+                                                          ]) !!}
+                </div>
+                <div class="form-group col-sm-6">
+                    {!! Form::label('pwd_smtp', 'Password SMTP:', ['class' => 'control-label']) !!}
+                    {!! Form::password('pwd_smtp', ['class' => 'form-control',
+                                                          'placeholder' => 'Password',
+                                                          'maxlength'   => '50',
+                                                          'title'       =>'Password SMTP']) !!}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6 required">
+                    {!! Form::label('enviador_smtp', 'Cuenta de Envío SMTP:', ['class' => 'control-label']) !!}
+                    {!! Form::text('enviador_smtp', null, ['class' => 'form-control',
+                                                          'placeholder' => 'ej. usuario.envio@dominio.com',
+                                                          'maxlength'   => '50',
+                                                          'title'       =>'Cuenta desde la cual se envía el mensaje.'
+                                                          ]) !!}
+                </div>
+                <div class="form-group col-sm-6">
+                    {!! Form::label('seguridad_smtp', 'Seguridad SMTP:') !!}
+                    {!! Form::select('seguridad_smtp', ['no' => 'No', 'ssl' => 'SSL', 'tls' => 'TLS'], null, ['class' => 'form-control']) !!}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

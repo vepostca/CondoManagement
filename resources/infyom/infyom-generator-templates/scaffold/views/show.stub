@@ -1,0 +1,28 @@
+@extends('layouts.app')
+@section('htmlheader_title')$MODEL_NAME$
+@endsection
+
+@section('content')
+    @pageHeader('$MODEL_NAME$.', 'Visualización.', 'fa fa-angle-double-right')
+    {!! Breadcrumbs::render('$MODEL_NAME_PLURAL_CAMEL$Show') !!}
+
+    <div class="portlet box blue-hoki">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-thumb-tack"></i>Visualización de $MODEL_NAME$
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a>
+                <a href="" class="fullscreen"> </a>
+            </div>
+        </div>
+
+        <div class="portlet-body form">
+            <div class="form-body">
+                @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.show_fields')
+            </div>
+            <div class="clearfix"></div>
+            @pageFormActions('show','$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index')
+        </div>
+    </div>
+@endsection

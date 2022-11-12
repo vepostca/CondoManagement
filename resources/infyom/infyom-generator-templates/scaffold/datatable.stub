@@ -1,0 +1,80 @@
+<?php
+namespace $NAMESPACE_DATATABLES$;
+
+use $NAMESPACE_MODEL$\$MODEL_NAME$;
+use Form;
+use Yajra\Datatables\Services\DataTable;
+
+class $MODEL_NAME$DataTable extends DataTable
+{
+
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function ajax()
+    {
+        return $this->datatables
+            ->eloquent($this->query())
+            ->addColumn('action', '$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.datatables_actions')
+            ->editColumn('activo', function ($MODEL_NAME$ $row) {
+                            return dt_check($row->activo);
+                        })
+            ->make(true);
+    }
+
+    /**
+     * Obtener el objeto query a ser procesado por datatables.
+     *
+     * @return \Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder
+     */
+    public function query()
+    {
+        $$MODEL_NAME_PLURAL_CAMEL$ = $MODEL_NAME$::select('$TABLE_NAME$.*', 'com_cliente.nombre as nombre_cliente', 'com_org.nombre as nombre_org')
+                    ->join('com_org', 'com_org.id', '=', '$TABLE_NAME$.com_org_id')
+                    ->join('com_cliente', 'com_cliente.id', '=', '$TABLE_NAME$.com_cliente_id');
+
+        return $this->applyScopes($$MODEL_NAME_PLURAL_CAMEL$);
+    }
+
+    /**
+     * Metodo opcional si se desea usar html builder
+     *
+     * @return \Yajra\Datatables\Html\Builder
+     */
+    public function html()
+    {
+        return $this->builder()
+            ->columns($this->getColumns())
+            ->addAction(['width' => '120px', 'title' => 'Acción', 'className'=>'text-center'])
+            ->ajax('')
+            ->parameters([
+                //'dom' => 'lfrtip',
+                'dom'   => '<"row" <"col-xs-12 col-sm-6 col-md-6"l><"col-xs-12 col-sm-6 col-md-6"f>>rtip',
+                'language' => ['url' => asset('assets/global/plugins/DataTables-1.10.12/lang/es.json') ],
+                'scrollX' => false,
+                'buttons' => ['print','pdf','excel','csv','reload','colvis']
+            ]);
+    }
+
+    /**
+     * Obtener las columnas.
+     *
+     * @return array
+     */
+    private function getColumns()
+    {
+        return [
+            $DATATABLE_COLUMNS$
+        ];
+    }
+
+    /**
+     * Obtener el nombre de archivo para exportar.
+     *
+     * @return string
+     */
+    protected function filename()
+    {
+        return '$MODEL_NAME_PLURAL_CAMEL$';
+    }
+}

@@ -1,0 +1,9 @@
+ {{--'bootstrap / Toggle Switch $FIELD_NAME_TITLE$ Field'--}}
+<div class="form-group col-sm-2">
+    {!! Form::label('$FIELD_NAME$', '$FIELD_NAME_TITLE$:',['class' => 'control-label']) !!} <br>
+    {!! Form::hidden('$FIELD_NAME$',false) !!}
+    {!! Form::checkbox('$FIELD_NAME$', 1, true,  ['data-toggle' => 'toggle','data-size' => 'small',
+                                                  'data-on' => 'Si', 'data-onstyle' => 'primary',
+                                                  'data-off' => 'No', 'data-offstyle' => 'danger',
+                                                  'data-height' => '28', 'data-width' => '50']) !!}
+</div>
