@@ -1,0 +1,45 @@
+[
+  {
+    "fieldInput": "id:uuid",
+    "dbType": "uuid",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": true,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "fieldInput": "com_cliente_id:uuid",
+    "dbType": "uuid:foreign,com_cliente_id,id",
+    "htmlType": "select:",
+    "relation": "mt1,Cliente,com_cliente_id,id",
+    "validations": "required",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "fieldInput": "com_org_id:uuid",
+    "dbType": "uuid:foreign,com_org_id,id",
+    "htmlType": "select:",
+    "relation": "mt1,Org,com_org_id,id",
+    "validations": "required",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "fieldInput": "title:string,20",
+    "htmlType": "text",
+    "validations": "required",
+    "searchable": true,
+    "inForm": true,
+    "inIndex": true
+  }
+]

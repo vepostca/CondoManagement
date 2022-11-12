@@ -1,0 +1,155 @@
+[
+  {
+    "fieldInput": "id:uuid",
+    "dbType": "uuid",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": true,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "fieldInput": "com_cliente_id:uuid",
+    "dbType": "uuid:foreign,com_cliente_id,id",
+    "htmlType": "select:",
+    "relation": "mt1,Cliente,com_cliente_id,id",
+    "validations": "required",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "fieldInput": "com_org_id:uuid",
+    "dbType": "uuid:foreign,com_org_id,id",
+    "htmlType": "select:",
+    "relation": "mt1,Org,com_org_id,id",
+    "validations": "required",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "fieldInput": "codigo:string,10",
+    "dbType": "string,10",
+    "htmlType": "text",
+    "validations": "required|min:2|max:10",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "fieldInput": "nombre:string,100",
+    "dbType": "string,100",
+    "htmlType": "text",
+    "validations": "required|min:2|max:100",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "fieldInput": "siglas:string,20",
+    "dbType": "string,20",
+    "htmlType": "text",
+    "validations": "min:2|max:20",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "fieldInput": "descripcion:string,255",
+    "dbType": "string,255",
+    "htmlType": "text",
+    "searchable": false,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "fieldInput": "activo:boolean",
+    "dbType": "boolean",
+    "htmlType": "checkbox,1",
+    "searchable": true,
+    "fillable": true,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "fieldInput": "created_by:uuid",
+    "dbType": "uuid",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "fieldInput": "created_at:timestamp",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "fieldInput": "created_ip:string,50",
+    "dbType": "string,50",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "fieldInput": "updated_by:uuid",
+    "dbType": "uuid",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "fieldInput": "updated_at:timestamp",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "fieldInput": "updated_ip:string,50",
+    "dbType": "string,50",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  }
+]

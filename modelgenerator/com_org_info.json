@@ -1,0 +1,134 @@
+[
+  {
+    "name": "id",
+    "dbType": "uuid",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": true,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "com_cliente_id",
+    "dbType": "uuid:foreign,com_cliente_id,id",
+    "htmlType": "select",
+    "relation": "mt1,Cliente,com_cliente_id,id",
+    "validations": "required",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "com_moneda_id",
+    "dbType": "uuid:foreign,com_moneda_id,id",
+    "htmlType": "select",
+    "relation": "mt1,Moneda,com_moneda_id,id",
+    "validations": "required",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "separador_decimal",
+    "dbType": "string",
+    "htmlType": "select,Coma:coma,Punto:punto",
+    "validations": "required",
+    "searchable": false,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "num_dec_coeficiente",
+    "dbType": "tinyinteger",
+    "htmlType": "select,Uno(1):1,Dos(2):2",
+    "validations": "required",
+    "searchable": false,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "activo",
+    "dbType": "boolean",
+    "htmlType": "checkbox,1",
+    "searchable": true,
+    "fillable": true,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "created_by",
+    "dbType": "uuid",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "created_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "created_ip",
+    "dbType": "string,50",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "updated_by",
+    "dbType": "uuid",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "updated_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "updated_ip",
+    "dbType": "string,50",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  }
+]

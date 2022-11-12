@@ -1,0 +1,166 @@
+[
+  {
+    "name": "id",
+    "dbType": "uuid",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": true,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "com_cliente_id",
+    "dbType": "uuid:foreign,com_cliente_id,id",
+    "htmlType": "select",
+    "relation": "mt1,Cliente,com_cliente_id,id",
+    "validations": "required",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "com_org_id",
+    "dbType": "uuid:foreign,com_org_id,id",
+    "htmlType": "select",
+    "relation": "mt1,Org,com_org_id,id",
+    "validations": "required",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "com_tipo_telefono_id",
+    "dbType": "uuid:foreign,com_tipo_telefono_id,id",
+    "htmlType": "select",
+    "relation": "mt1,TipoTelefono,com_tipo_telefono_id,id",
+    "validations": "required",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "codigo_area",
+    "dbType": "string,6",
+    "htmlType": "text",
+    "validations": "required|min:2|max:6",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "num_telf",
+    "dbType": "string,15",
+    "htmlType": "text",
+    "validations": "required|min:5|max:15",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "es_principal",
+    "dbType": "boolean",
+    "htmlType": "checkbox,1",
+    "searchable": true,
+    "fillable": true,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "notas",
+    "dbType": "string,255",
+    "htmlType": "text",
+    "validations": "min:5|max:255",
+    "searchable": false,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "activo",
+    "dbType": "boolean",
+    "htmlType": "checkbox,1",
+    "searchable": true,
+    "fillable": true,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "created_by",
+    "dbType": "uuid",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "created_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "created_ip",
+    "dbType": "string,50",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "updated_by",
+    "dbType": "uuid",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "updated_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "updated_ip",
+    "dbType": "string,50",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  }
+]
